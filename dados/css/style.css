@@ -1,0 +1,92 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+img{
+	max-width: 100%;
+}
+a{
+	text-decoration: none;
+}
+
+.esquerda {
+	width: 20%;
+	height: 100vh;
+	position: fixed;
+	text-align: center;
+	top: 0px;
+	left: 0px;
+	color: white;
+	background: yellowgreen;
+	/*overflow-y: scroll;*/
+	padding: 20px;
+}
+
+.direita {
+	width: 20%;
+	height: 100vh;
+	position: fixed;
+	text-align: center;
+	top: 0px;
+	right: 0px;
+	color: white;
+	padding: 20px;
+	overflow-y: scroll;
+	background: yellowgreen;
+}
+
+.centro {
+	width: 60%;
+	height: 100vh;
+	position: fixed;
+	text-align: center;
+	top: 0px;
+	right: 20%;
+	padding: 20px;
+	background: #f1f1f1;
+	
+}
+
+.baralhar{
+	text-align: center;
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+}
+
+h1{
+	margin-bottom: 40px;
+}
+
+input{
+	color: black;
+}
+.inv{
+	display: none;
+}
+.face{
+	position: absolute;
+	display: none;
+}
+
+.multiplosDados{
+	text-align: center;
+}
+
+.mostra {
+	display: block;
+}
+
+.dado{
+	position: relative;
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+}
+
