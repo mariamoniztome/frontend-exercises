@@ -1,7 +1,7 @@
 # Betting Website Landing Page Clone
 
 
-A cloned landing page of a betting promotion for a job application exercise.
+A cloned landing page of a betting promotion for a exercise.
 
 
 ## Installation
