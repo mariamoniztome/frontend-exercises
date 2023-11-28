@@ -1,71 +1,62 @@
-window.onload = function(){
+window.onload = function () {
+  var i, j;
+  var num;
+  var makeDice = document.querySelector(".dice").innerHTML;
+  var total = 0;
 
-var i,j;
-var num;
-var desenhaDado = document.querySelector('.dado').innerHTML;
-var total = 0;
+  document.querySelector(".btn-dices").onclick = function () {
+    document.querySelector(".container-right").innerHTML = "";
+    num = document.querySelector(".dices").value;
+    console.log("-->" + num);
+    if (num == "") {
+      alert("Tem de escolher um número");
+    } else {
+      document.querySelector(".multiple").innerHTML = "";
+      for (i = 1; i <= num; i++) {
+        document.querySelector(".multiple").innerHTML +=
+          '<div class="dice dice' + i + '">' + makeDice + "</div>";
+        var sort = prize(1, 6);
+        document
+          .querySelector(".dice" + i + " .face" + sort)
+          .classList.add("show");
+      }
+      document.querySelector(".shuffle").classList.add("show");
+    }
+  };
 
-document.querySelector('.nDados').onclick = function(){
-	document.querySelector('.direita').innerHTML = '';
-	num = document.querySelector('.dados').value;
-	console.log('-->'+num);
-	if (num=='') {
-		alert('Tem de escolher um número');
-	}else{
-		document.querySelector('.multiplosDados').innerHTML = ''; 
-		for (i = 1; i <= num; i++) {
-		document.querySelector('.multiplosDados').innerHTML += '<div class="dado dado'+i+'">'+desenhaDado+'</div>';
-		var sort = sorteio(1,6);
-		document.querySelector('.dado'+i+' .face'+sort).classList.add('mostra');
-		}
-		document.querySelector('.baralhar').classList.add('mostra');
+  document.querySelector(".shuffle").onclick = function () {
+    total = 0;
+    for (i = 1; i <= num; i++) {
+      var sort = prize(1, 6);
+      document.querySelector(".container-right").innerHTML +=
+        "<br>Saiu (" + sort + ")";
+      total += sort;
+      for (j = 1; j <= 6; j++) {
+        if (
+          document
+            .querySelector(".dice" + i + " .face" + j)
+            .classList.contains("show") == true
+        ) {
+          document
+            .querySelector(".dice" + i + " .face" + j)
+            .classList.remove("show");
+        }
+      }
+      console.log(".dice" + i + " .face" + sort);
+      document
+        .querySelector(".dice" + i + " .face" + sort)
+        .classList.add("show");
+    }
+    document.querySelector(".container-right").innerHTML +=
+      "<br><strong>Total</strong> (" + total + ")<br>";
+    var newTotal = 0;
+    newTotal += total;
+    console.log(newTotal);
+    document.querySelector(".container-left").innerHTML =
+      "<h2>Total (" + newTotal + ")</h2>";
+  };
 
-	}
-}
-
-document.querySelector('.baralhar').onclick = function(){
-	total = 0;
-	for (i = 1; i <= num; i++) {
-		var sort = sorteio(1,6);
-		document.querySelector('.direita').innerHTML += '<br>Saiu ('+sort+')';
-		total += sort;
-		for (j = 1; j <= 6; j++) {
-
-			if (document.querySelector('.dado'+i+' .face'+j).classList.contains('mostra') == true) {
-				document.querySelector('.dado'+i+' .face'+j).classList.remove('mostra');
-			}
-		}
-		console.log('.dado'+i+' .face'+sort);
-		document.querySelector('.dado'+i+' .face'+sort).classList.add('mostra');
-		/* if (document.querySelector('.dado'+i+ '.face1').classList.contains('mostra') == true) {
-			document.querySelector('.dado'+i+ '.face1').classList.removes('mostra');
-		}
-		if (document.querySelector('.dado'+i+ '.face2').classList.contains('mostra') == true) {
-			document.querySelector('.dado'+i+ '.face2').classList.removes('mostra');
-		}
-		if (document.querySelector('.dado'+i+ '.face3').classList.contains('mostra') == true) {
-			document.querySelector('.dado'+i+ '.face3').classList.removes('mostra');
-		}
-		if (document.querySelector('.dado'+i+ '.face4').classList.contains('mostra') == true) {
-			document.querySelector('.dado'+i+ '.face4').classList.removes('mostra');
-		}
-		if (document.querySelector('.dado'+i+ '.face5').classList.contains('mostra') == true) {
-			document.querySelector('.dado'+i+ '.face5').classList.removes('mostra');
-		}
-		if (document.querySelector('.dado'+i+ '.face6').classList.contains('mostra') == true) {
-			document.querySelector('.dado'+i+ '.face6').classList.removes('mostra');
-		}*/
-
-	}	
-	document.querySelector('.direita').innerHTML += '<br>Total ('+total+')<br>';
-	var novoTotal = 0;
-	novoTotal += total;
-	console.log(novoTotal);
-	document.querySelector('.esquerda').innerHTML = '<h1>Total ('+novoTotal+')</h1>';
-}
-
-function sorteio(min,max){
-	return Math.floor(Math.random()*(max - min +1)) + min;
-}
-
-}
+  function prize(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+};
