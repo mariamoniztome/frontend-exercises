@@ -1,76 +1,35 @@
-function insert(number){
-	var num = document.getElementById('numero').value;
-	document.getElementById('numero').value = num + number;
-}
+document.querySelector('.key-wrapper').addEventListener('click', function (event) {
+  var clickedButton = event.target;
+  var currentNumber = document.getElementById('number').value;
+  var historyContainer = document.querySelector('.history-container');
 
-document.querySelector('.um').onclick = function(){
-	insert('1');
-}
+  if (clickedButton.innerText === '=') {
+    historyContainer.innerHTML += currentNumber + '=' + eval(currentNumber) + '<br>';
+    document.getElementById('number').value = eval(currentNumber);
+  } else if (clickedButton.innerText === 'C') {
+    document.getElementById('number').value = '';
+  } else if (clickedButton.innerText === 'CE') {
+    document.getElementById('number').value = '';
+    historyContainer.innerHTML = '';
+  } else {
+    document.getElementById('number').value = currentNumber + clickedButton.innerText;
+  }
+});
 
-document.querySelector('.dois').onclick = function(){
-	insert('2');
-}
+document.getElementById('mode').onclick = function () {
+  this.classList.toggle('box-yellow');
+  document.querySelector('.calculator-container').classList.toggle('background-blue');
+  document.querySelector('.history-container').classList.toggle('background-yellow');
+  document.querySelector('.calculator-container--body').classList.toggle('background-blue');
+  document.getElementById('number').classList.toggle('background-yellow');
+  
 
-document.querySelector('.tres').onclick = function(){
-	insert('3');
-}
 
-document.querySelector('.quatro').onclick = function(){
-	insert('4');
-}
+  document.querySelectorAll('.key-yellow').forEach(function (element) {
+    element.classList.toggle('background-blue');
+  });
 
-document.querySelector('.cinco').onclick = function(){
-	insert('5');
-}
-
-document.querySelector('.seis').onclick = function(){
-	insert('6');
-}
-
-document.querySelector('.sete').onclick = function(){
-	insert('7');
-}
-
-document.querySelector('.oito').onclick = function(){
-	insert('8');
-}
-
-document.querySelector('.nove').onclick = function(){
-	insert('9');
-}
-
-document.querySelector('.div').onclick = function(){
-	insert('/');
-}
-
-document.querySelector('.multi').onclick = function(){
-	insert('*');
-}
-
-document.querySelector('.soma').onclick = function(){
-	insert('+');
-}
-
-document.querySelector('.menos').onclick = function(){
-	insert('-');
-}
-
-document.querySelector('.raizQuad').onclick = function(){
-	insert('√');
-}
-document.querySelector('.per').onclick = function(){
-	insert('%');
-}
-document.querySelector('.delete').onclick = function(){
-	document.getElementById('numero').value = '';
-}
-
-document.querySelector('.result').onclick = function(){
-	document.querySelector('.hist').innerHTML = document.querySelector('.hist').innerHTML + document.getElementById('numero').value;
-	document.getElementById('numero').value = eval(document.getElementById('numero').value);
-	document.querySelector('.hist').innerHTML = document.querySelector('.hist').innerHTML +'='+document.getElementById('numero').value +'<br>';
-}
-
-document.getElementById('mode').onclick = function(){
-	document.querySelector('.calculadora').classList.toggle('aspeto');
+  document.querySelectorAll('.key-grey').forEach(function (element) {
+    element.classList.toggle('background-yellow');
+  });
 }

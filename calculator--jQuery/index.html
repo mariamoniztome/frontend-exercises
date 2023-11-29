@@ -1,95 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calculadora</title>
+	<title>Calculator</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Bootstrap - FontAwesome">
-	<meta name="keywords" content="Bootstrap,Containers, rows, cols">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div class="calculadora aspeto">
-		<div class="bodyCal">
-			<div class="resultado">
-				<input type="text" id="numero" name="numero" readonly="">
+	<div class="calculator-container background-blue">
+		<div class="calculator-container--body">
+			<div class="result">
+				<input type="text" id="number" name="number" readonly="">
 			</div>
-			<div class="teclasCal">
-				<div class="coluna"> 
-					<div class="tecla"> 
-						<button class="botao teclaBrancas aspeto2 per"> % </button>
+			<div class="key-wrapper">
+				<div class="column"> 
+					<div class="key-thumbnail"> 
+						<button class="key key-white key-white--per background-blue"> % </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza sete"> 7 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--seven"> 7 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza quatro"> 4 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--four"> 4 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza um"> 1 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--one"> 1 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza ponto"> . </button>
-					</div>
-				</div>
-				<div class="coluna">
-					<div class="tecla"> 
-						<button class="botao teclaBrancas raizQuad"> √ </button>
-					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza oito"> 8 </button>
-					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza cinco"> 5 </button>
-					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza dois"> 2 </button>
-					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza zero"> 0 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--dot"> . </button>
 					</div>
 				</div>
-				<div class="coluna">
-					<div class="tecla"> 
-						<button class="botao teclaAmarela delete"> CE </button>
+				<div class="column">
+					<div class="key-thumbnail"> 
+						<button class="key key-white key-white--quad"> √ </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza nove"> 9 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--eight"> 8 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza seis"> 6 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--five"> 5 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza tres"> 3 </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--two"> 2 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaBrancas result"> = </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--zero"> 0 </button>
 					</div>
 				</div>
-				<div class="coluna"> 
-					<div class="tecla"> 
-						<button class="botao teclaAmarela delete"> C </button>
+				<div class="column">
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--delete"> CE </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza menos"> - </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--nine"> 9 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza div"> / </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--six"> 6 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaCinza multi"> * </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--three"> 3 </button>
 					</div>
-					<div class="tecla"> 
-						<button class="botao teclaBrancas soma"> + </button>
+					<div class="key-thumbnail"> 
+						<button class="key key-white key-white--equal"> = </button>
+					</div>
+				</div>
+				<div class="column"> 
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--delete"> C </button>
+					</div>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--minus"> - </button>
+					</div>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--div"> / </button>
+					</div>
+					<div class="key-thumbnail"> 
+						<button class="key key-grey key-grey--multi"> * </button>
+					</div>
+					<div class="key-thumbnail"> 
+						<button class="key key-white key-white--sum"> + </button>
 					</div>	
 				</div>			
 			</div>
 		</div>	
 	</div>
-	<div class="hist">
+	<div class="history-container">
 		
 	</div>
-	<div class="botao2">
+	<div class="btn-mode">
 		<button id="mode"></button>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
